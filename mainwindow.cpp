@@ -3,7 +3,8 @@
 #include <QVBoxLayout>
 
 Worker::Worker(QObject* parent) : QThread(parent)
-{}
+{
+}
 
 void Worker::stop()
 {
@@ -17,40 +18,28 @@ void Worker::run()
     currentState = State::A;
     currentIndex = 0;
     while (currentState != State::Finished && !m_stop) {
-        switch (currentState) {
-            case State::A:
-                processA();
-                break;
-            case State::B:
-                processB();
-                break;
-            case State::C:
-                processC();
-                break;
-            case State::D:
-                processD();
-                break;
-            default:
-                break;
-        }
-
-        int     percent = ((currentIndex + 1) * 100) / stateCount; // 進捗%を自動計算
+        int percent = ((currentIndex + 1) * 100) / stateCount;
         QString name;
         switch (currentState) {
             case State::A:
+                processA();
                 name = "A";
                 break;
             case State::B:
+                processB();
                 name = "B";
                 break;
             case State::C:
+                processC();
                 name = "C";
                 break;
             case State::D:
+                processD();
                 name = "D";
                 break;
             default:
                 name = "";
+                percent = 0;
                 break;
         }
         emit progressChanged(percent, name + " done");
@@ -63,22 +52,22 @@ void Worker::run()
 // --- 各プロセスの処理テンプレート ---
 void Worker::processA() // TODO: Aの処理をここに実装
 {
-    QThread::sleep(2);
+    QThread::sleep(1);
 }
 
 void Worker::processB() // TODO: Bの処理をここに実装
 {
-    QThread::sleep(2);
+    QThread::sleep(1);
 }
 
 void Worker::processC() // TODO: Cの処理をここに実装
 {
-    QThread::sleep(2);
+    QThread::sleep(1);
 }
 
 void Worker::processD() // TODO: Dの処理をここに実装
 {
-    QThread::sleep(2);
+    QThread::sleep(1);
 }
 
 void Worker::nextState() // 状態遷移（次の状態へ）
