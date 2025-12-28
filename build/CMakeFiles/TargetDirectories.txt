@@ -1,5 +1,0 @@
-/home/yasuyuki/Qt/Qsequence/build/CMakeFiles/Qsequence.dir
-/home/yasuyuki/Qt/Qsequence/build/CMakeFiles/edit_cache.dir
-/home/yasuyuki/Qt/Qsequence/build/CMakeFiles/rebuild_cache.dir
-/home/yasuyuki/Qt/Qsequence/build/CMakeFiles/Qsequence_autogen_timestamp_deps.dir
-/home/yasuyuki/Qt/Qsequence/build/CMakeFiles/Qsequence_autogen.dir

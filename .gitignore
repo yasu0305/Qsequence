@@ -1,0 +1,24 @@
+# Qt/C++/CMake build artifacts
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+Qsequence_autogen/
+*.o
+*.obj
+*.exe
+*.user
+*.pro.user
+*.moc
+*.qrc
+*.autosave
+*.swp
+*.swo
+*.DS_Store
+*.log
+*.bak
+*.tmp
+*.out
+# VSCode settings (keep .vscode/ for workspace settings)
+!.vscode/
