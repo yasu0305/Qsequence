@@ -1,4 +1,4 @@
-# Qt/C++/CMake build artifacts
+# Qt/C++/qmake build artifacts
 build/
 CMakeFiles/
 CMakeCache.txt
@@ -20,5 +20,9 @@ Qsequence_autogen/
 *.bak
 *.tmp
 *.out
+moc_*.cpp
+moc_*.h
+.qmake.stash
+Qsequence
 # VSCode settings (keep .vscode/ for workspace settings)
 !.vscode/
