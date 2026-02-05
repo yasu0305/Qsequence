@@ -15,13 +15,13 @@ Qt6/C++17による逐次処理・進捗表示GUIアプリ
 - Linux（apt版Qt6推奨）
 - Qt6 (qt6-base-dev, qt6-tools-dev など)
 - g++ (C++17対応)
-- CMake 3.16以降
+- qmake
 
 ### ビルド手順
 ```sh
 mkdir build
 cd build
-cmake ..
+qmake ..
 make -j4
 ```
 
@@ -31,9 +31,10 @@ make -j4
 ```
 
 ## 主なファイル
-- mainwindow.h / mainwindow.cpp : メインウィンドウ・状態マシン・UI/処理ロジック
+- mainwindow.h / mainwindow.cpp : メインウィンドウ・UI制御
+- worker.h / worker.cpp : 状態マシン・処理ロジック
 - main.cpp : アプリ起動エントリ
-- CMakeLists.txt : CMakeビルド設定
+- Qsequence.pro : qmakeビルド設定
 - .clang-format : Qt/LLVM系C++整形ルール
 
 ## 機能
@@ -43,8 +44,8 @@ make -j4
 - DateTime: 現在日時を右上に常時表示
 
 ## カスタマイズ
-- 各プロセスの処理内容はmainwindow.cppのprocessA/B/C/D内に記述
-- プロセス数を増減する場合はState列挙体・stateList/stateCountを編集
+- 各プロセスの処理内容はworker.cppのprocessA/B/C/D内に記述
+- プロセス数を増減する場合はworker.hのState列挙体・stateList/stateCountを編集
 
 ## 注意
 - プログレスバーの%はプロセス数から自動計算されます
